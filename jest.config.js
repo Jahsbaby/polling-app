@@ -1,11 +1,10 @@
 export default {
-  transform: {},
-  testEnvironment: 'node',
-  moduleNameMapper: {
-    '^helmet$': 'helmet',
-    '^express-rate-limit$': 'express-rate-limit',
+  transform: {
+    '^.+\.js$': 'babel-jest',
   },
+  testEnvironment: 'node',
   moduleFileExtensions: ['js', 'json', 'node'],
+  resolver: './resolver.js',
   testMatch: ['**/tests/**/*.test.js'],
   collectCoverage: true,
   coverageDirectory: 'coverage',
