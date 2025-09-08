@@ -60,7 +60,7 @@ class Poll {
       throw new Error("Invalid option");
     }
     // update internal store (find actual reference)
-    const stored = this.getPollById(poll.id);
+    const stored = Poll.getPollById(poll.id);
     if (!stored) throw new Error("Poll not found");
     stored.options[option] = (Number(stored.options[option]) || 0) + 1;
     return clone(stored);
